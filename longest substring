@@ -1,0 +1,46 @@
+[2:58 pm, 24/9/2024] +91 90351 39235: ongest substring with no repeating characters
+
+ 
+'''
+ qn - abcabcbbb
+      012345678
+set - set()
+maxe = max(maxe,(i-l+1))
+maxe = 3
+'''
+string = input()
+s = set()
+l = 0
+maxValue = 0
+for i in range(len(string)):                    #abcabcbbb   set = {"a","b","c"}
+    while string[i] in s:                        
+        s.remove(string[l])
+        l+=1
+    s.add(string[i])
+    maxValue = max(maxValue,i-l+1)      
+print(maxValue)
+[2:59 pm, 24/9/2024] +91 90351 39235: Group the anagrams
+
+
+
+'''
+['eat',tea,tan,ate,nat,bat]
+dict = {aet: ['eat','tea','ate'],ant:['tan','nat'],abt:['bat']}
+
+
+
+[eat,ate,tea],[tan,nat],[bat]
+
+'''
+l = list(map(str,input().split(",")))
+print(l)
+
+dict ={}
+
+for word in l:
+    sortedWord = "".join(sorted(word))
+    if sortedWord in dict:
+        dict[sortedWord].append(word)
+    else:
+        dict[sortedWord] = [word]
+print(list(dict.values()))
